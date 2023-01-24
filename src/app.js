@@ -16,7 +16,7 @@ import fotoRoutes from './routes/fotoRoutes'
 import './dataBase'
 
 const whiteList = [
-  'http://192.168.100.7',
+  'http://192.168.100.13',
   'http:localhost:3000',
   'https://www.udemy.com/'
 ]
