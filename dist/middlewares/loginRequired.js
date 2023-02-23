@@ -1,7 +1,7 @@
 "use strict";Object.defineProperty(exports, "__esModule", {value: true}); function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var _jsonwebtoken = require('jsonwebtoken'); var _jsonwebtoken2 = _interopRequireDefault(_jsonwebtoken);
 var _User = require('../models/User'); var _User2 = _interopRequireDefault(_User);
 
-exports. default = (req, res, next) => {
+exports. default = async (req, res, next) => {
   const { authorization } = req.headers
 
   if (!authorization) {
@@ -16,12 +16,11 @@ exports. default = (req, res, next) => {
     const dados = _jsonwebtoken2.default.verify(token, process.env.TOKEN_SECRET)
     const { id, email } = dados
 
-    const user = _User2.default.findOne({
+    const user = await _User2.default.findOne({
       where: {
-        id, email
+        email
       }
     })
-
     if (!user) {
       return res.status(401).json({
         errors: ['Email editado! Novo Token necessario!']

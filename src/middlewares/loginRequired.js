@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'
 import User from '../models/User'
 
-export default (req, res, next) => {
+export default async (req, res, next) => {
   const { authorization } = req.headers
 
   if (!authorization) {
@@ -16,12 +16,11 @@ export default (req, res, next) => {
     const dados = jwt.verify(token, process.env.TOKEN_SECRET)
     const { id, email } = dados
 
-    const user = User.findOne({
+    const user = await User.findOne({
       where: {
-        id, email
+        email
       }
     })
-
     if (!user) {
       return res.status(401).json({
         errors: ['Email editado! Novo Token necessario!']
