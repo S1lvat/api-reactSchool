@@ -10,7 +10,7 @@ class UserController {
       res.status(200).json({ id, nome, email })
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }
@@ -21,7 +21,7 @@ class UserController {
       return res.status(200).json(users)
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }
@@ -39,7 +39,7 @@ class UserController {
       return res.status(200).json({ id, nome, email })
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }
@@ -58,7 +58,7 @@ class UserController {
       return res.status(200).json({ id, nome, email })
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }
@@ -75,7 +75,7 @@ class UserController {
       return res.status(200).json(user)
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }

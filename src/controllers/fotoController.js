@@ -10,7 +10,7 @@ class FotoController {
     return upload(req, res, async (err) => {
       if (err) {
         return res.status(400).json({
-          Errors: [err.code]
+          errors: [err.code]
         })
       }
 
@@ -23,7 +23,7 @@ class FotoController {
         return res.status(200).json(foto)
       } catch (err) {
         return res.status(400).json({
-          Errors: ['Usuario nao existe!']
+          errors: ['Usuario nao existe!']
         })
       }
     })

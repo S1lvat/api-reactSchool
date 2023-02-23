@@ -27,7 +27,7 @@ class AlunoController {
       res.status(200).json(alunos)
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }
@@ -58,7 +58,7 @@ class AlunoController {
       res.status(200).json(aluno)
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }
@@ -84,7 +84,7 @@ class AlunoController {
       res.status(200).json(alunoEditado)
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }
@@ -110,7 +110,7 @@ class AlunoController {
       res.status(200).json('Aluno apagado com sucesso!')
     } catch (e) {
       res.status(400).json({
-        Errors: e.errors.map(err => err.message)
+        errors: e.errors.map(err => err.message)
       })
     }
   }
