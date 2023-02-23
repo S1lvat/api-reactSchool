@@ -23,7 +23,7 @@ exports. default = async (req, res, next) => {
     })
     if (!user) {
       return res.status(401).json({
-        errors: ['Email editado! Novo Token necessario!']
+        errors: ['Email editado! Faça login novamente!']
       })
     }
 
