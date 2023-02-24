@@ -35,7 +35,7 @@ class AlunoController {
   async show (req, res) {
     try {
       if (!req.params.id) {
-        return res.status(401).json({
+        return res.status(400).json({
           errors: ['Por favor, digite um id valido!']
         })
       }
@@ -50,7 +50,7 @@ class AlunoController {
       })
 
       if (!aluno) {
-        return res.status(401).json({
+        return res.status(400).json({
           errors: ['Aluno nao existe!']
         })
       }
@@ -92,7 +92,7 @@ class AlunoController {
   async delete (req, res) {
     try {
       if (!req.params.id) {
-        return res.status(401).json({
+        return res.status(400).json({
           errors: ['Por favor, digite um id valido!']
         })
       }
@@ -100,7 +100,7 @@ class AlunoController {
       const aluno = await _Aluno2.default.findByPk(req.params.id)
 
       if (!aluno) {
-        return res.status(401).json({
+        return res.status(400).json({
           errors: ['Aluno nao existe!']
         })
       }
