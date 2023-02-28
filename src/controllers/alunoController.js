@@ -10,7 +10,9 @@ class AlunoController {
 
       return res.status(200).json(alunoCriado)
     } catch (e) {
-      return res.status(400).json(e.errors.map(err => err.message))
+      return res.status(400).json({
+        errors: e.errors.map(err => err.message)
+      })
     }
   }
 
