@@ -40,7 +40,7 @@ class App {
   }
 
   middlewares () {
-    this.app.use(cors())
+    this.app.use(cors({ origin: false }))
     this.app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }))
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
