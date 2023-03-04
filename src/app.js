@@ -37,9 +37,9 @@ class App {
   }
 
   middlewares () {
-    this.app.use(cors({ origin: true }))
+    this.app.use(cors({ origin: '*' }))
     this.app.use(helmet({
-      referrerPolicy: { policy: 'no-referrer' },
+      referrerPolicy: { policy: 'origin' },
       crossOriginResourcePolicy: { policy: 'cross-origin' }
     }))
     this.app.use(express.urlencoded({ extended: true }))
