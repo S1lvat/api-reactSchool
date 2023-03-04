@@ -15,22 +15,22 @@ var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopReq
 
 require('./dataBase');
 
-const whiteList = [
-  'http://192.168.100.13',
-  'http:localhost:3000',
-  'http:localhost:3001',
-  'https://www.udemy.com/'
-]
+// const whiteList = [
+//   'http://192.168.100.13',
+//   'http:localhost:3000',
+//   'http:localhost:3001',
+//   'https://www.udemy.com/'
+// ]
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whiteList.indexOf(origin) === -1 || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS!'))
-    }
-  }
-}
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whiteList.indexOf(origin) === -1 || !origin) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS!'))
+//     }
+//   }
+// }
 
 class App {
   constructor () {
@@ -40,8 +40,8 @@ class App {
   }
 
   middlewares () {
-    this.app.use(_cors2.default.call(void 0, corsOptions))
-    this.app.use(_helmet2.default.call(void 0, { crossOriginResourcePolicy: { policy: 'cross-origin' }, referrerPolicy: { policy: 'origin-when-cross-origin' } }))
+    this.app.use(_cors2.default.call(void 0, ))
+    this.app.use(_helmet2.default.call(void 0, { crossOriginResourcePolicy: { policy: 'cross-origin' } }))
     this.app.use(_express2.default.urlencoded({ extended: true }))
     this.app.use(_express2.default.json())
     this.app.use(_express2.default.static(_path.resolve.call(void 0, __dirname, '..', 'uploads')))

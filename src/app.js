@@ -15,22 +15,22 @@ import fotoRoutes from './routes/fotoRoutes'
 
 import './dataBase'
 
-const whiteList = [
-  'http://192.168.100.13',
-  'http:localhost:3000',
-  'http:localhost:3001',
-  'https://www.udemy.com/'
-]
+// const whiteList = [
+//   'http://192.168.100.13',
+//   'http:localhost:3000',
+//   'http:localhost:3001',
+//   'https://www.udemy.com/'
+// ]
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whiteList.indexOf(origin) === -1 || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS!'))
-    }
-  }
-}
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whiteList.indexOf(origin) === -1 || !origin) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS!'))
+//     }
+//   }
+// }
 
 class App {
   constructor () {
@@ -40,8 +40,8 @@ class App {
   }
 
   middlewares () {
-    this.app.use(cors(corsOptions))
-    this.app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' }, referrerPolicy: { policy: 'origin-when-cross-origin' } }))
+    this.app.use(cors())
+    this.app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }))
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
     this.app.use(express.static(resolve(__dirname, '..', 'uploads')))
