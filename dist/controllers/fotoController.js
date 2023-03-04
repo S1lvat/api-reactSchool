@@ -3,7 +3,7 @@ var _multer3 = require('../config/multer'); var _multer4 = _interopRequireDefaul
 
 var _Foto = require('../models/Foto'); var _Foto2 = _interopRequireDefault(_Foto);
 
-const upload = _multer2.default.call(void 0, _multer4.default).single('Foto')
+const upload = _multer2.default.call(void 0, _multer4.default).single('foto')
 
 class FotoController {
   store (req, res) {

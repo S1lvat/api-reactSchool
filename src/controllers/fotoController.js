@@ -3,7 +3,7 @@ import multerConfig from '../config/multer'
 
 import Foto from '../models/Foto'
 
-const upload = multer(multerConfig).single('Foto')
+const upload = multer(multerConfig).single('foto')
 
 class FotoController {
   store (req, res) {
