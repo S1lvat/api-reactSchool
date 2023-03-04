@@ -41,7 +41,7 @@ class App {
 
   middlewares () {
     this.app.use(_cors2.default.call(void 0, corsOptions))
-    this.app.use(_helmet2.default.call(void 0, { crossOriginResourcePolicy: { policy: 'cross-origin' } }))
+    this.app.use(_helmet2.default.call(void 0, { crossOriginResourcePolicy: { policy: 'cross-origin' }, referrerPolicy: { policy: 'origin-when-cross-origin' } }))
     this.app.use(_express2.default.urlencoded({ extended: true }))
     this.app.use(_express2.default.json())
     this.app.use(_express2.default.static(_path.resolve.call(void 0, __dirname, '..', 'uploads')))
