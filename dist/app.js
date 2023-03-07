@@ -15,19 +15,19 @@ var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopReq
 
 require('./dataBase');
 
-// const whiteList = [
-//   'http://localhost:3000/'
-// ]
+const whiteList = [
+  'http://localhost:3000/'
+]
 
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whiteList.indexOf(origin) === -1 || !origin) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS!'))
-//     }
-//   }
-// }
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whiteList.indexOf(origin) === -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS!'))
+    }
+  }
+}
 
 class App {
   constructor () {
@@ -37,9 +37,9 @@ class App {
   }
 
   middlewares () {
-    this.app.use(_cors2.default.call(void 0, { origin: '*' }))
+    this.app.use(_cors2.default.call(void 0, corsOptions))
     this.app.use(_helmet2.default.call(void 0, {
-      referrerPolicy: { policy: 'origin' },
+      referrerPolicy: { policy: '' },
       crossOriginResourcePolicy: { policy: 'cross-origin' }
     }))
     this.app.use(_express2.default.urlencoded({ extended: true }))
