@@ -16,7 +16,7 @@ var _fotoRoutes = require('./routes/fotoRoutes'); var _fotoRoutes2 = _interopReq
 require('./dataBase');
 
 const whiteList = [
-  'http://localhost:3000/'
+  'http://localhost:3000'
 ]
 
 const corsOptions = {
