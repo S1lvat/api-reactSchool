@@ -42,7 +42,7 @@ class App {
       crossOriginResourcePolicy: { policy: 'cross-origin' },
       contentSecurityPolicy: {
         directives: {
-          'default-src': ['http://localhost:3000']
+          'img-src': ['http://localhost:3000']
         }
       }
     }))
