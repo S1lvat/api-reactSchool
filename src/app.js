@@ -39,7 +39,7 @@ class App {
   middlewares () {
     this.app.use(cors(corsOptions))
     this.app.use(helmet({
-      crossOriginResourcePolicy: { policy: 'cross-origin' },
+      crossOriginEmbedderPolicy: { policy: 'cross-origin' },
       contentSecurityPolicy: {
         directives: {
           defaultSrc: ['http://localhost:3000']
