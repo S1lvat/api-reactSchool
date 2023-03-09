@@ -41,7 +41,6 @@ class App {
     this.app.use(helmet({
       crossOriginResourcePolicy: { policy: 'cross-origin' },
       contentSecurityPolicy: {
-        useDefaults: false,
         directives: {
           'img-src': ['http://localhost:3000']
         }
