@@ -39,7 +39,12 @@ class App {
   middlewares () {
     this.app.use(cors(corsOptions))
     this.app.use(helmet({
-      crossOriginResourcePolicy: { policy: 'cross-origin' }
+      crossOriginResourcePolicy: { policy: 'cross-origin' },
+      contentSecurityPolicy: {
+        directives: {
+          'img-src': ['http://localhost:3000']
+        }
+      }
     }))
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
