@@ -40,6 +40,7 @@ class App {
     this.app.use(cors({ origin: 'http://localhost:3000' }))
     this.app.use(helmet({
       crossOriginResourcePolicy: { policy: 'cross-origin' },
+      referrerPolicy: { policy: '' },
       contentSecurityPolicy: {
         directives: {
           'default-src': ['http://localhost:3000']
