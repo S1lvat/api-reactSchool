@@ -39,12 +39,7 @@ class App {
   middlewares () {
     this.app.use(cors({ origin: 'http://localhost:3000' }))
     this.app.use(helmet({
-      crossOriginResourcePolicy: { policy: 'cross-origin' },
-      contentSecurityPolicy: {
-        directives: {
-          'default-src': ['http://localhost:3000']
-        }
-      }
+      crossOriginResourcePolicy: { policy: 'cross-origin' }
     }))
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
