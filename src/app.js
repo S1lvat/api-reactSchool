@@ -15,20 +15,20 @@ import fotoRoutes from './routes/fotoRoutes'
 
 import './dataBase'
 
-// const whiteList = [
-//   'http://localhost:3000'
-// ]
+const whiteList = [
+  'http://localhost:3000'
+]
 
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whiteList.indexOf(origin) === -1 || !origin) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS!'))
-//     }
-//   },
-//   optionsSuccessStatus: 200
-// }
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whiteList.indexOf(origin) === -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS!'))
+    }
+  },
+  optionsSuccessStatus: 200
+}
 
 class App {
   constructor () {
@@ -38,7 +38,7 @@ class App {
   }
 
   middlewares () {
-    this.app.use(cors())
+    this.app.use(cors(corsOptions))
     this.app.use(helmet({ contentSecurityPolicy: { useDefaults: true }, crossOriginResourcePolicy: { policy: 'cross-origin' } }))
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
