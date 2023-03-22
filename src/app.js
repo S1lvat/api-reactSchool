@@ -4,8 +4,8 @@ dotenv.config()
 import { resolve } from 'path'
 
 import express from 'express'
-import cors from 'cors'
-import helmet from 'helmet'
+// import cors from 'cors'
+// import helmet from 'helmet'
 
 import homeRoutes from './routes/homeRoutes'
 import userRoutes from './routes/userRoutes'
