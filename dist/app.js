@@ -4,7 +4,7 @@ _dotenv2.default.config()
 var _path = require('path');
 
 var _express = require('express'); var _express2 = _interopRequireDefault(_express);
-// import cors from 'cors'
+var _cors = require('cors'); var _cors2 = _interopRequireDefault(_cors);
 var _helmet = require('helmet'); var _helmet2 = _interopRequireDefault(_helmet);
 
 var _homeRoutes = require('./routes/homeRoutes'); var _homeRoutes2 = _interopRequireDefault(_homeRoutes);
@@ -38,7 +38,7 @@ class App {
   }
 
   middlewares () {
-    // this.app.use(cors({ origin: '*' }))
+    this.app.use(_cors2.default.call(void 0, { origin: '*' }))
     // this.app.options(cors({ origin: '*' }))
     this.app.use(_helmet2.default.call(void 0, { contentSecurityPolicy: { useDefaults: true }, crossOriginResourcePolicy: { policy: 'cross-origin' }, permittedCrossDomainPolicies: { permittedPolicies: 'all' } }))
     this.app.use(_express2.default.urlencoded({ extended: true }))
