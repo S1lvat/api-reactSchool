@@ -4,7 +4,7 @@ dotenv.config()
 import { resolve } from 'path'
 
 import express from 'express'
-import cors from 'cors'
+// import cors from 'cors'
 import helmet from 'helmet'
 
 import homeRoutes from './routes/homeRoutes'
@@ -38,8 +38,8 @@ class App {
   }
 
   middlewares () {
-    this.app.use(cors({ origin: '*' }))
-    this.app.options(cors({ origin: '*' }))
+    // this.app.use(cors({ origin: '*' }))
+    // this.app.options(cors({ origin: '*' }))
     this.app.use(helmet({ contentSecurityPolicy: { useDefaults: true }, crossOriginResourcePolicy: { policy: 'cross-origin' }, permittedCrossDomainPolicies: { permittedPolicies: 'all' } }))
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
