@@ -1,7 +1,6 @@
+import { resolve, join } from 'path'
 import dotenv from 'dotenv'
-dotenv.config()
-
-import { resolve } from 'path'
+dotenv.config({ path: join(__dirname, '..', '.env') })
 
 import express from 'express'
 import cors from 'cors'
