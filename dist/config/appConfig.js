@@ -2,6 +2,5 @@
 _dotenv2.default.config()
 
 exports. default = {
-  url: process.env.IP_SERVER,
-  port: process.env.PORT
+  url: process.env.IP_SERVER
 }
