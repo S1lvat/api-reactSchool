@@ -23,6 +23,7 @@ class App {
 
   middlewares () {
     this.app.use(cors())
+    this.app.options(cors())
     this.app.use(helmet({
       crossOriginResourcePolicy: { policy: 'cross-origin' },
       contentSecurityPolicy: false
