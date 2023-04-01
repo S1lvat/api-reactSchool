@@ -26,7 +26,7 @@ class App {
     this.app.options(cors())
     this.app.use(helmet({
       crossOriginResourcePolicy: { policy: 'cross-origin' },
-      contentSecurityPolicy: false
+      contentSecurityPolicy: { directives: { imgSrc: ['*'] } }
     }))
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
