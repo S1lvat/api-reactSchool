@@ -23,7 +23,10 @@ class App {
 
   middlewares () {
     this.app.use(cors())
-    this.app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }))
+    this.app.use(helmet({
+      crossOriginResourcePolicy: { policy: 'cross-origin' },
+      contentSecurityPolicy: false
+    }))
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.json())
     this.app.use(express.static(resolve(__dirname, '..', 'uploads')))
